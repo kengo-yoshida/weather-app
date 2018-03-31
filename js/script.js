@@ -3,6 +3,7 @@ $(document).ready(function () {
     var long;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
+            $("#data").text("Fetching the latest temperature")
             lat = position.coords.latitude;
             long = position.coords.longitude;
             sendURL();
@@ -41,6 +42,7 @@ $(document).ready(function () {
             var temp = json.main.temp;
             console.log(temp)
             $("#data").text(temp)
+            $("#data").addClass("bg-success")
             if (temp >= 25) {
                 $("body").css("background-image", 'url("img/desert.jpg")');
                 $("body").addClass("bg");
