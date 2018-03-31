@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
 
     function sendURL() {
-        var url = "http://fcc-weather-api.glitch.me/api/current?lat=" + lat + "&lon=" + long;
+        var url = "https://fcc-weather-api.glitch.me/api/current?lat=" + lat + "&lon=" + long;
         $.getJSON(url, function (json) {
                 // {
                 //     "coord": {"lon": 77.64, "lat": 12.91},
