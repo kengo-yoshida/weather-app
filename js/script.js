@@ -11,7 +11,7 @@ $(document).ready(function () {
     }
 
     function sendURL() {
-        var url = "https://fcc-weather-api.glitch.me/api/current?lat=" + lat + "&lon=" + long;
+        var url = "http://fcc-weather-api.glitch.me/api/current?lat=" + lat + "&lon=" + long;
         $.getJSON(url, function (json) {
                 // {
                 //     "coord": {"lon": 77.64, "lat": 12.91},
@@ -41,7 +41,7 @@ $(document).ready(function () {
                 // }
             var temp = json.main.temp;
             console.log(temp)
-            $("#data").text(temp)
+            $("#data").text(temp + " °C")
             $("#data").addClass("bg-success")
             if (temp >= 25) {
                 $("#weather-img").css("background-image", 'url("img/desert.jpg")');
