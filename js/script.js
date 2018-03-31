@@ -44,14 +44,14 @@ $(document).ready(function () {
             $("#data").text(temp)
             $("#data").addClass("bg-success")
             if (temp >= 25) {
-                $("body").css("background-image", 'url("img/desert.jpg")');
-                $("body").addClass("bg");
+                $("#weather-img").css("background-image", 'url("img/desert.jpg")');
+                $("#weather-img").addClass("bg");
             } else if (temp < 25 && temp > 10) {
-                $("body").css("background-image", 'url("img/beach.jpg")');
-                $("body").addClass("bg");
+                $("#weather-img").css("background-image", 'url("img/beach.jpg")');
+                $("#weather-img").addClass("bg");
             } else {
-                $("body").css("background-image", 'url("img/ice.jpg")');
-                $("body").addClass("bg");
+                $("#weather-img").css("background-image", 'url("img/ice.jpg")');
+                $("#weather-img").addClass("bg");
             }
         });
     }
