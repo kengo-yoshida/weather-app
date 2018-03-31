@@ -42,11 +42,14 @@ $(document).ready(function () {
             console.log(temp)
             $("#data").text(temp)
             if (temp >= 25) {
-                $("body").css("background-color", "red");
+                $("body").css("background-image", 'url("img/desert.jpg")');
+                $("body").addClass("bg");
             } else if (temp < 25 && temp > 10) {
-                $("body").css("background-color", "yellow");
+                $("body").css("background-image", 'url("img/beach.jpg")');
+                $("body").addClass("bg");
             } else {
-                $("body").css("background-color", "offwhite");
+                $("body").css("background-image", 'url("img/ice.jpg")');
+                $("body").addClass("bg");
             }
         });
     }
