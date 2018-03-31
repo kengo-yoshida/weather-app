@@ -1,6 +1,8 @@
 $(document).ready(function () {
     var lat;
     var long;
+    var temp;
+    var temp_in_f;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             $("#data").text("Fetching the latest temperature")
@@ -39,7 +41,8 @@ $(document).ready(function () {
                 //     "name": "Bangalore",
                 //     "cod": 200
                 // }
-            var temp = json.main.temp;
+            temp = json.main.temp;
+            temp_in_f = convertToFahrenheit(temp);
             console.log(temp)
             $("#data").text(temp + " °C")
             $("#data").addClass("bg-success")
@@ -52,7 +55,19 @@ $(document).ready(function () {
             } else {
                 $("#weather-img").css("background-image", 'url("img/ice.jpg")');
                 $("#weather-img").addClass("bg");
-            }
+            }                                               
         });
+    }
+
+    $(".change-std").click(function () {
+        if($(this).val() == "celsius") {
+            $("#data").text(temp + " °C")
+        } else {
+            $("#data").text(temp_in_f + " °F")
+        }
+    });
+
+    function convertToFahrenheit(val) {
+        return val * 9 / 5 + 32;
     }
 })
